@@ -1,6 +1,6 @@
 {
   "name": "js-typewriter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Small utility to add a typewriter effect to a webpage.",
   "main": "typewriter.js",
   "devDependencies": {
