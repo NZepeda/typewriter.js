@@ -51,14 +51,13 @@ class TypeWriter {
 
   insertTextSpan() {
     document.getElementById(
-      this.elementId
+      this.elementId,
     ).innerHTML = `<span id="${this.textElementId}"></span>`;
   }
 
   insertCursor() {
     const currentHtml = document.getElementById(this.elementId).innerHTML;
-    document.getElementById(this.elementId).innerHTML =
-      currentHtml +
+    document.getElementById(this.elementId).innerHTML = currentHtml +
       `<span id="cursor" style="font-weight: bold; font-size: 1.3em">|</span>`;
 
     this.initializeCursor();
@@ -90,7 +89,7 @@ class TypeWriter {
 
     const backwardIntervalId = setInterval(
       () => backspace(backwardIntervalId),
-      this.speed
+      this.speed,
     );
   }
 
@@ -119,7 +118,7 @@ class TypeWriter {
       }
       const currentText = this.getCurrentText();
       this.setCurrentText(
-        currentText + this.strings[this.wordIndex].charAt(this.characterIndex)
+        currentText + this.strings[this.wordIndex].charAt(this.characterIndex),
       );
       this.characterIndex++;
     };
@@ -127,7 +126,7 @@ class TypeWriter {
     /* Set our typing interval to the speed passed in */
     const forwardIntervalId = setInterval(
       () => type(forwardIntervalId),
-      this.speed
+      this.speed,
     );
   }
 
@@ -135,3 +134,5 @@ class TypeWriter {
     this.typeForward();
   }
 }
+
+export default TypeWriter;
